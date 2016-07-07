@@ -1,1 +1,1 @@
-quickbox_rutorrent-plugins
+quickbox_rtplugins

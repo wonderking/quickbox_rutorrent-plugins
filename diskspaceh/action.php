@@ -3,8 +3,8 @@
 #################################################################################
 ##  [Quick Box - action.php modified for quota systems use]
 #################################################################################
-# GITHUB REPOS
-# GitHub _ packages  :   https://github.com/QuickBox/quickbox_rutorrent-plugins
+# QUICKLAB REPOS
+# QuickLab _ packages:   https://lab.quickbox.io/QuickBox/quickbox_rutorrent-plugins
 # LOCAL REPOS
 # Local _ packages   :   ~/QuickBox/rtplugins
 # Author             :   QuickBox.IO
