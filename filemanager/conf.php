@@ -1,7 +1,7 @@
 <?php
-$fm['tempdir'] = '/tmp';               // path were to store temporary data ; must be writable 
+$fm['tempdir'] = '/tmp';               // path were to store temporary data ; must be writable
 $fm['mkdperm'] = 755;          // default permission to set to new created directories
-$pathToExternals['rar'] = '/usr/bin/unrar';
+$pathToExternals['rar'] = '/usr/sbin/rar';
 $pathToExternals['zip'] = '/usr/bin/zip';
 $pathToExternals['unzip'] = '/usr/bin/unzip';
 $pathToExternals['tar'] = '/bin/tar';
