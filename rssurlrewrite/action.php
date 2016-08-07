@@ -27,4 +27,4 @@ switch($cmd)
 if(is_null($val))
 	$val = $mngr->getContents();
 
-cachedEcho(safe_json_encode($val),"application/json",true);
+cachedEcho(json_encode($val),"application/json",true);

@@ -95,10 +95,7 @@ class NyaaEngine extends commonEngine
 						$link = 'http:' . $link;
 					if (!array_key_exists($link, $ret)) {
 						$item = $this->getNewEntry();
-						$desc = self::removeTags($matches["desc"][$i]);
-						if (strpos($desc, '//') === 0)
-							$desc = 'http:' . $desc;
-						$item["desc"] = $desc;
+						$item["desc"] = self::removeTags($matches["desc"][$i]);
 						$item["name"] = self::toUTF(self::removeTags($matches["name"][$i]),"utf-8");
 						$item["size"] = self::formatSize($matches["size"][$i]);
 						$item["cat"] = self::removeTags($matches["cat"][$i]);

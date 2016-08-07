@@ -66,4 +66,4 @@ if(isset($_REQUEST['hash']) &&
 	}
 }
 
-cachedEcho(safe_json_encode($ret),"application/json");
+cachedEcho(json_encode($ret),"application/json");
