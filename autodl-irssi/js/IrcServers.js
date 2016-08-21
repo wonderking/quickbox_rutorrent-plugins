@@ -33,9 +33,12 @@ function(multiSelectDlgBox, okHandler)
 		'<div id="autodl-ircsrvs">' +
 			'<div id="autodl-ircsrvs-left">' +
 				'<div id="autodl-ircsrvs-list" />' +
-				'<div id="autodl-ircsrvs-list-buttons">' +
+				'<div id="autodl-ircsrvs-list-buttons" align="center">' +
 					'<input type="button" class="Button" id="autodl-ircsrvs-new-button" value="' + theUILang.autodlNew + '" />' +
 					'<input type="button" class="Button" id="autodl-ircsrvs-remove-button" value="' + theUILang.autodlRemove + '" />' +
+				'</div>' +
+				'<div align="center">' +
+					'<input type="button" class="Button" id="autodl-ircsrvs-announce-channels-button" value="' + theUILang.autodlServers2 + '" />' +
 				'</div>' +
 			'</div>' +
 			'<div id="autodl-ircsrvs-right">' +
@@ -43,23 +46,23 @@ function(multiSelectDlgBox, okHandler)
 					'<legend>' + theUILang.autodlIrcsrvs1 + '</legend>' +
 					'<div>' +
 						'<label for="autodl-ircsrvs-server">' + theUILang.autodlIrcsrvs2 + '</label>' +
-						'<input type="text" class="textbox" id="autodl-ircsrvs-server" title="' + theUILang.autodlIrcsrvs3 + '" emptytext="' + theUILang.autodlIrcsrvs4 + '"/>' +
+						'<input type="text" class="textbox-12" id="autodl-ircsrvs-server" title="' + theUILang.autodlIrcsrvs3 + '" placeholder="' + theUILang.autodlIrcsrvs4 + '"/>' +
 						'<label for="autodl-ircsrvs-port">' + theUILang.autodlIrcsrvs5 + '</label>' +
-						'<input type="text" class="textbox" id="autodl-ircsrvs-port" title="' + theUILang.autodlIrcsrvs6 + '" emptytext="' + theUILang.autodlIrcsrvs7 + '"/>' +
+						'<input type="text" class="textbox-5" id="autodl-ircsrvs-port" title="' + theUILang.autodlIrcsrvs6 + '" placeholder="' + theUILang.autodlIrcsrvs7 + '"/>' +
 						'<input type="checkbox" id="autodl-ircsrvs-ssl" title="' + theUILang.autodlIrcsrvs8 + '"/>' +
 						'<label for="autodl-ircsrvs-ssl" title="' + theUILang.autodlIrcsrvs9 + '">' + theUILang.autodlIrcsrvs10 + '</label>' +
 					'</div>' +
 					'<div>' +
 						'<label for="autodl-ircsrvs-nick">' + theUILang.autodlIrcsrvs11 + '</label>' +
-						'<input type="text" class="textbox" id="autodl-ircsrvs-nick" title="' + theUILang.autodlIrcsrvs12 + '"/>' +
+						'<input type="text" class="textbox-5" id="autodl-ircsrvs-nick" title="' + theUILang.autodlIrcsrvs12 + '"/>' +
 						'<label for="autodl-ircsrvs-identpass">' + theUILang.autodlPassword + '</label>' +
-						'<input type="password" class="textbox" id="autodl-ircsrvs-identpass" title="' + theUILang.autodlIrcsrvs14 + '"/>' +
+						'<input type="password" class="textbox-5" id="autodl-ircsrvs-identpass" title="' + theUILang.autodlIrcsrvs14 + '"/>' +
 						'<label for="autodl-ircsrvs-identemail">' + theUILang.autodlIrcsrvs15 + '</label>' +
-						'<input type="text" class="textbox" id="autodl-ircsrvs-identemail" title="' + theUILang.autodlIrcsrvs16 + '"/>' +
+						'<input type="text" class="textbox-7" id="autodl-ircsrvs-identemail" title="' + theUILang.autodlIrcsrvs16 + '"/>' +
 					'</div>' +
 					'<div>' +
 						'<label for="autodl-ircsrvs-server-password">' + theUILang.autodlIrcsrvs32 + '</label>' +
-						'<input type="text" class="textbox" id="autodl-ircsrvs-server-password" title="' + theUILang.autodlIrcsrvs33 + '"/>' +
+						'<input type="text" class="textbox-12" id="autodl-ircsrvs-server-password" title="' + theUILang.autodlIrcsrvs33 + '"/>' +
 						'<input type="checkbox" id="autodl-ircsrvs-bnc" title="' + theUILang.autodlIrcsrvs34 + '"/>' +
 						'<label for="autodl-ircsrvs-bnc" title="' + theUILang.autodlIrcsrvs35 + '">' + theUILang.autodlIrcsrvs36 + '</label>' +
 					'</div>' +
@@ -73,33 +76,33 @@ function(multiSelectDlgBox, okHandler)
 					'</div>' +
 					'<div>' +
 						'<label for="autodl-ircsrvs-channel">' + theUILang.autodlIrcsrvs18 + '</label>' +
-						'<input type="text" class="textbox" id="autodl-ircsrvs-channel" title="' + theUILang.autodlIrcsrvs19 + '" emptytext="' + theUILang.autodlIrcsrvs20 + '"/>' +
+						'<input type="text" class="textbox-11" id="autodl-ircsrvs-channel" title="' + theUILang.autodlIrcsrvs19 + '" placeholder="' + theUILang.autodlIrcsrvs20 + '"/>' +
 						'<label for="autodl-ircsrvs-channelpass">' + theUILang.autodlPassword + '</label>' +
-						'<input type="password" class="textbox" id="autodl-ircsrvs-channelpass" title="' + theUILang.autodlIrcsrvs22 + '"/>' +
+						'<input type="password" class="textbox-8" id="autodl-ircsrvs-channelpass" title="' + theUILang.autodlIrcsrvs22 + '"/>' +
 					'</div>' +
 					'<table>' +
 						'<tbody>' +
 							'<tr>' +
 								'<td><label for="autodl-ircsrvs-chaninvite">' + theUILang.autodlIrcsrvs23 + '</label></td>' +
-								'<td><input type="text" class="textbox" id="autodl-ircsrvs-chaninvite" title="' + theUILang.autodlIrcsrvs24 + '" emptytext="' + theUILang.autodlIrcsrvs25 + '"/></td>' +
+								'<td><input type="text" class="textbox-20" id="autodl-ircsrvs-chaninvite" title="' + theUILang.autodlIrcsrvs24 + '" placeholder="' + theUILang.autodlIrcsrvs25 + '"/></td>' +
 							'</tr>' +
 							'<tr>' +
 								'<td><label for="autodl-ircsrvs-httpurl">' + theUILang.autodlIrcsrvs26 + '</label></td>' +
-								'<td><input type="text" class="textbox" id="autodl-ircsrvs-httpurl" title="' + theUILang.autodlIrcsrvs27 + '"/></td>' +
+								'<td><input type="text" class="textbox-20" id="autodl-ircsrvs-httpurl" title="' + theUILang.autodlIrcsrvs27 + '"/></td>' +
 							'</tr>' +
 							'<tr>' +
 								'<td><label for="autodl-ircsrvs-httpheader">' + theUILang.autodlIrcsrvs28 + '</label></td>' +
-								'<td><input type="text" class="textbox" id="autodl-ircsrvs-httpheader" title="' + theUILang.autodlIrcsrvs29 + '"/></td>' +
+								'<td><input type="text" class="textbox-20" id="autodl-ircsrvs-httpheader" title="' + theUILang.autodlIrcsrvs29 + '"/></td>' +
 							'</tr>' +
 							'<tr>' +
 								'<td><label for="autodl-ircsrvs-httpdata">' + theUILang.autodlIrcsrvs30 + '</label></td>' +
-								'<td><input type="text" class="textbox" id="autodl-ircsrvs-httpdata" title="' + theUILang.autodlIrcsrvs31 + '"/></td>' +
+								'<td><input type="text" class="textbox-20" id="autodl-ircsrvs-httpdata" title="' + theUILang.autodlIrcsrvs31 + '"/></td>' +
 							'</tr>' +
 						'</tbody>' +
 					'</table>' +
 				'</fieldset>' +
 			'</div>' +
-			'<div class="aright buttons-list dlgbuttons">' +
+			'<div class="aright buttons-list dialog-buttons">' +
 				'<input type="button" id="autodl-ircsrvs-ok-button" value="' + theUILang.ok + '" class="OK Button" />' +
 				'<input type="button" value="' + theUILang.Cancel + '" class="Cancel Button" />' +
 			'</div>' +
@@ -135,6 +138,10 @@ function(multiSelectDlgBox, okHandler)
 	{
 		this_._onRemoveServerClicked();
 	});
+	$("#autodl-ircsrvs-announce-channels-button").click(function()
+	{
+		theDialogManager.show("autodl-servers");
+	});
 	$("#autodl-ircsrvs-new-channel-button").click(function()
 	{
 		this_._onNewChannelClicked();
@@ -162,9 +169,6 @@ function(multiSelectDlgBox, okHandler)
 	};
 
 	$("#autodl-ircsrvs-ok-button").click(function(e) { okHandler() });
-
-	// Do this last so all textboxes have been created
-	installEmptyTextHandlers("autodl-ircsrvs");
 }
 
 IrcServers.prototype.onBeforeShow =
@@ -268,7 +272,7 @@ function(obj)
 
 		saveDialogOptions(section, this.serverOptions);
 
-		section.name = $("#autodl-ircsrvs-server").myval();
+		section.name = $("#autodl-ircsrvs-server").val();
 
 		var enabled = obj.checkboxElem.checked;
 		section.getOption("enabled").setValue(enabled.toString());
@@ -287,7 +291,7 @@ function(oldObj, newObj)
 	var section = (this.activeServerInfo || {}).serverSection;
 
 	initDialogOptions(section, this.serverOptions);
-	$("#autodl-ircsrvs-server").myval(section ? section.name : "");
+	$("#autodl-ircsrvs-server").val(section ? section.name : "");
 
 	this.channelsDropdown.empty();
 	if (this.activeServerInfo)
@@ -355,7 +359,7 @@ function(channelSection)
 	{
 		saveDialogOptions(channelSection, this.channelOptions);
 
-		var newName = $("#autodl-ircsrvs-channel").myval();
+		var newName = $("#autodl-ircsrvs-channel").val();
 		channelSection.getOption("name", "", "text").setValue(newName);
 	}
 
@@ -366,7 +370,7 @@ function(channelSection)
 {
 	initDialogOptions(channelSection, this.channelOptions);
 	var name = channelSection ? channelSection.getOption("name", "", "text").getValue() : "";
-	$("#autodl-ircsrvs-channel").myval(name);
+	$("#autodl-ircsrvs-channel").val(name);
 
 	var elems = $("#autodl-ircsrvs-channels-fieldset").find("input, select").filter(":not(#autodl-ircsrvs-new-channel-button)");
 	enableJqueryElem(elems, channelSection);
@@ -378,14 +382,14 @@ function()
 	var obj = this.serversListBox.getSelectedData();
 	if (!obj)
 		return;
-	var newText = this._fixName($("#autodl-ircsrvs-server").myval());
+	var newText = this._fixName($("#autodl-ircsrvs-server").val());
 	$(obj.labelElem).text(newText);
 }
 
 IrcServers.prototype._onChannelNameModified =
 function()
 {
-	var newText = this._fixName($("#autodl-ircsrvs-channel").myval());
+	var newText = this._fixName($("#autodl-ircsrvs-channel").val());
 	this.channelsDropdown.renameSelected(newText);
 }
 

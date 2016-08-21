@@ -61,7 +61,7 @@ function(aryFiles, func)
 		return func();
 	for (var i = 0; i < aryFiles.length; i++)
 	{
-		injectScript(this.path + aryFiles[i], function()
+		injectScript(this.path + 'js/' + aryFiles[i], function()
 		{
 			if (--numFiles === 0)
 				func();
@@ -91,13 +91,11 @@ function()
 {
 	var this_ = this;
 
-	$("body").addClass("theme-" + this.getThemeName());
-	this.loadMainCSS();
+	this.loadCSS("css/" + this.getThemeName() + ".min");
 
 	// Note: These files aren't necessarily loaded in order! They must not rely on other JS files.
 	this.loadJavaScriptFiles(
 	[
-		'EmptyText.js',
 		'ListBox.js',
 		'Tabs.js',
 		'DialogUtils.js',
@@ -108,6 +106,7 @@ function()
 		'Trackers.js',
 		'Servers.js',
 		'IrcServers.js',
+		'Help.js',
 		'AutodlFilesDownloader.js',
 		'ConfigFileParser.js',
 		'TrackerInfo.js',
@@ -170,15 +169,11 @@ function(e)
 
 	theContextMenu.clear();
 	theContextMenu.add([theUILang.autodlFilters2, function() { this_.dialogManager.toggleDialog("filters"); }]);
-	theContextMenu.add([theUILang.autodlServers2, function() { this_.dialogManager.toggleDialog("servers"); }]);
 	theContextMenu.add([theUILang.autodlIrcServers2, function() { this_.dialogManager.toggleDialog("ircsrvs"); }]);
 	theContextMenu.add([theUILang.autodlTrackers2, function() { this_.dialogManager.toggleDialog("trackers"); }]);
 	theContextMenu.add([theUILang.autodlPreferences2, function() { this_.dialogManager.toggleDialog("preferences"); }]);
 	theContextMenu.add([CMENU_SEP]);
-	theContextMenu.add([theUILang.autodlHelp, function() {}]);
-
-	// There's no way to add href links so add this fugly hack
-	$($("a", theContextMenu.obj)[5]).attr("target", "_blank").attr("href", "http://sourceforge.net/apps/phpbb/autodl-irssi/");
+	theContextMenu.add([theUILang.autodlHelp2, function() { this_.dialogManager.toggleDialog("help"); }]);
 
 	var offset = $("#autodl-tb").offset();
 	var x = offset.left - 5;

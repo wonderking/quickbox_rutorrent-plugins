@@ -42,24 +42,24 @@ function(multiSelectDlgBox, okHandler)
 					'<tbody>' +
 						'<tr>' +
 							'<td><label for="autodl-servers-network">' + theUILang.autodlNetwork + '</label></td>' +
-							'<td><input type="text" class="textbox" id="autodl-servers-network" /></td>' +
+							'<td><input type="text" class="textbox-18" id="autodl-servers-network" /></td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td><label for="autodl-servers-servers">' + theUILang.autodlServer + '</label></td>' +
-							'<td><input type="text" class="textbox" id="autodl-servers-servers" /></td>' +
+							'<td><input type="text" class="textbox-18" id="autodl-servers-servers" /></td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td><label for="autodl-servers-channels">' + theUILang.autodlChannels + '</label></td>' +
-							'<td><input type="text" class="textbox" id="autodl-servers-channels" /></td>' +
+							'<td><input type="text" class="textbox-18" id="autodl-servers-channels" /></td>' +
 						'</tr>' +
 						'<tr>' +
 							'<td><label for="autodl-servers-announcers">' + theUILang.autodlAnnouncer + '</label></td>' +
-							'<td><input type="text" class="textbox" id="autodl-servers-announcers" /></td>' +
+							'<td><input type="text" class="textbox-18" id="autodl-servers-announcers" /></td>' +
 						'</tr>' +
 					'</tbody>' +
 				'</table>' +
 			'</div>' +
-			'<div class="aright buttons-list dlgbuttons">' +
+			'<div class="aright buttons-list dialog-buttons">' +
 				'<input type="button" id="autodl-servers-close-button" value="' + theUILang.autodlClose + '" class="Button" />' +
 			'</div>' +
 		'</div>'
@@ -73,9 +73,6 @@ function(multiSelectDlgBox, okHandler)
 	this.trackerListBox.onSelected = function(oldObj, newObj) { this_._onTrackerSelected(oldObj, newObj); }
 
 	$("#autodl-servers-close-button").click(function(e) { okHandler() });
-
-	// Do this last so all textboxes have been created
-	installEmptyTextHandlers("autodl-servers");
 }
 
 Servers.prototype.onOkClicked =
@@ -147,7 +144,7 @@ function(oldObj, newObj)
 	function setIt(obj, id, propName)
 	{
 		var server = (obj || {}).server || {};
-		$("#" + id).myval(server[propName] || "");
+		$("#" + id).val(server[propName] || "");
 	}
 	setIt(newObj, "autodl-servers-network", "network");
 	setIt(newObj, "autodl-servers-servers", "serverNames");

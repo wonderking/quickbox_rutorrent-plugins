@@ -24,9 +24,8 @@
 
 function autodl_ajax(obj)
 {
-	// IE8 caches all Ajax requests!
-	if ($.browser={ msie: ( navigator.appName == 'Microsoft Internet Explorer') ? true : false })
-		obj.cache = false;
+	// Don't cache any AJAX requests.
+	obj.cache = false;
 
 	$.ajax(obj);
 }
