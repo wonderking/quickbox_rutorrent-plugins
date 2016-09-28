@@ -1,3 +1,3 @@
 <?php
 
-$defaultTheme = ""; // May be "", "Oblivion", "Dark", "Blue" or "Acid"
+$defaultTheme = "club-Swizards"; // May be "", "Oblivion", "Dark", "Blue" or "Acid"
