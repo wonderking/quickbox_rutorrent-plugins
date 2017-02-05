@@ -2,7 +2,7 @@
 
 class Torrent411Engine extends commonEngine
 {
-    public $defaults = array("public" => false, "page_size" => 50, "cookies" => "www.t411.ch|uid=XXX;pass=XXX;authKey=XXX");
+    public $defaults = array("public" => false, "page_size" => 50, "cookies" => "www.t411.li|uid=XXX;pass=XXX;authKey=XXX");
     
     public $categories = array(
 		'Tout' => '',
@@ -66,7 +66,11 @@ class Torrent411Engine extends commonEngine
 		'|--|--Série TV' => '&subcat=433',
 		'|--|--Spectacle' => '&subcat=635',
 		'|--|--Sport' => '&subcat=636',
-		'|--|--Vidéo-clips' => '&subcat=402'
+		'|--|--Vidéo-clips' => '&subcat=402',
+		'|--xXx' => '&cat=456',
+		'|--|--eBooks' => '&subcat=461',
+		'|--|--Jeux vidéo' => '&subcat=462',
+		'|--|--Vidéo' => '&subcat=632'
 	);
     
     public function action($what, $cat, &$ret, $limit, $useGlobalCats)
@@ -111,10 +115,13 @@ class Torrent411Engine extends commonEngine
             '433' => 'Film/Vidéo > Série TV',
             '635' => 'Film/Vidéo > Spectacle',
             '636' => 'Film/Vidéo > Sport',
-            '402' => 'Film/Vidéo > Vidéo-clips'
+            '402' => 'Film/Vidéo > Vidéo-clips',
+            '461' => 'xXx > eBooks',
+			'462' => 'xXx > Jeux Vidéo',
+			'632' => 'xXx > Vidéo'
         );
         $added = 0;
-        $url   = 'https://www.t411.ch';
+        $url   = 'https://www.t411.li';
         if ($useGlobalCats)
             $categories = array(
                 'all' => '',

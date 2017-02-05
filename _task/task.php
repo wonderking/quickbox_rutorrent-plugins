@@ -286,10 +286,15 @@ class rTaskManager
 			} 
 			closedir($handle);		
 	        }
-	        krsort($tasks);
+	        uasort($tasks,array('self', 'sortByStarted'));
 	        return($tasks);
 	}
 	
+	static public function sortByStarted($a,$b)
+	{
+		return( $a['start'] > $b['start'] ? -1 : ($a['start'] < $b['start'] ? 1 : 0) );
+	}
+
 	static public function isPIDExists( $pid )
 	{
 		return( function_exists( 'posix_getpgid' ) ? (posix_getpgid($pid)!==false) : file_exists( '/proc/'.$pid ) );
@@ -301,10 +306,9 @@ class rTaskManager
 		$tasks = self::obtain();
 		foreach( $tasks as $id=>$task )
 		{
-			$invalid = ($task["status"]<0);
 			$finished_with_error = ($task["status"]>0);
 			$in_progress = !$finished_with_error && $task["pid"] && self::isPIDExists($task["pid"]);
-			if( $invalid ||	(!$finished_with_error && !$in_progress && ($counter>=self::MAX_TASK_COUNT)) )
+			if( !$finished_with_error && !$in_progress && ($counter>=self::MAX_TASK_COUNT) )
 				rTask::clean(rTask::formatPath($id));
 			else
 				$counter++;
