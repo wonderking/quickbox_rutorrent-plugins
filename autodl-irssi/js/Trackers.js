@@ -288,7 +288,7 @@ function(setting, trackerInfo)
 			{
 				this_._onPaste(trackerInfo, setting.pasteGroup, textbox);
 			});
-			textbox.bind('input', function(e)
+			textbox.on('input', function(e)
 			{
 				this_._onPaste(trackerInfo, setting.pasteGroup, textbox);
 			});
@@ -355,7 +355,7 @@ function(trackerInfo, pasteGroup, textboxElem)
 
 		var textbox = $("#" + this._settingIdFromName(trackerInfo, name));
 		var ary = s.match(setting.pasteRegex);
-		if (textbox.size() > 0 && ary && ary.length > 1)
+		if (textbox.length > 0 && ary && ary.length > 1)
 			textbox.val(ary[1]);
 	}
 }
