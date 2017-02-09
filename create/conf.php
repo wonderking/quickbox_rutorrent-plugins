@@ -8,6 +8,6 @@ $useExternal = 'mktorrent';		// Valid choices:
 				// "createtorrent" - use program createtorrent (see http://www.createtorrent.com)
 				// "mktorrent" - use program createtorrent (see http://mktorrent.sourceforge.net)
 				// "buildtorrent" - use program buildtorrent (see http://claudiusmaximus.goto10.org/cm/torrent.html)
-$pathToCreatetorrent = '/usr/bin/mktorrent';	// Something like /bin/createtorrent, or /bin/transmissioncli. If empty, program will be found in PATH.
+$pathToCreatetorrent = '/usr/local/bin/mktorrent';	// Something like /bin/createtorrent, or /bin/transmissioncli. If empty, program will be found in PATH.
 
 $recentTrackersMaxCount = 15;
