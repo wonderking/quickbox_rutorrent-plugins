@@ -10,7 +10,7 @@
 # Author             :   QuickBox.IO
 # URL                :   https://plaza.quickbox.io
 #
-# QuickBox Copyright (C) 2016 QuickBox.io
+# QuickBox Copyright (C) 2017 QuickBox.io
 # Licensed under GNU General Public License v3.0 GPL-3 (in short)
 #
 #   You may copy, distribute and modify the software as long as you track
